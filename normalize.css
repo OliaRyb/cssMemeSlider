@@ -52,7 +52,7 @@ body {
     flex-direction: row;
     gap: 5px;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     width: 25%;
 }
 .clickArea {
