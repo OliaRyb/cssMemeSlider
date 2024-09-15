@@ -73,7 +73,7 @@ label:hover .clickArea {
     align-items: center;
     justify-content: center;
     padding: 1.5%;
-    width: 1rem;
+    width: 2rem;
     aspect-ratio: 1 / 1;
     cursor: pointer; 
 }
@@ -92,8 +92,8 @@ label:hover .clickArea {
     width: auto;
 }
 .switch {
-    max-height: 60vh;
-    max-width: 40vw;
+    max-width: 60vw;
+    min-height: 60%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
