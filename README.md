@@ -1,3 +1,3 @@
 # cssMemeSlider
 
-[Link to the cssMemeSlider](https://OliaRyb.github.io/cssMemeSlider/cssMemeSlider/index.html)
+[Link to the cssMemeSlider](https://OliaRyb.github.io/cssMemeSlider/index.html)
