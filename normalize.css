@@ -1,0 +1,170 @@
+body {
+    background-color: #3f3f3f;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+.imgBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    max-height: 90%;
+}
+.img {
+    width: 0;
+    max-width: 100%;
+    max-height: 100%;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    object-fit: cover;
+    transition: 2s;
+}
+.textBox {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 65%;
+}
+.text {
+    opacity: 0;
+    color: white;
+    font-size: 0.8em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    transition: 2s;
+}
+.switch input {
+    display: none;
+}
+.controls {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+    justify-content: flex-end;
+    width: 25%;
+}
+.clickArea {
+    background-color: rgb(149, 173, 255);
+    border-radius: 10px;
+    width: 60%;
+    height: 60%;
+    cursor: pointer;
+    transition: 1s;
+}
+.controls .clickArea:hover,
+label:hover .clickArea {
+    background-color: white;
+}
+.controls label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5%;
+    width: 2rem;
+    aspect-ratio: 1 / 1;
+    cursor: pointer; 
+}
+.switch #first:checked ~ .bottom label:hover #f, 
+.switch #second:checked ~ .bottom label:hover #s,
+.switch #third:checked ~ .bottom label:hover #t,
+.switch #fourth:checked ~ .bottom label:hover #fth {
+    border: 2px solid white !important;
+}
+
+.switch #first:checked ~ .bottom #f, 
+.switch #second:checked ~ .bottom #s,
+.switch #third:checked ~ .bottom #t,
+.switch #fourth:checked ~ .bottom #fth{
+    border: 2px solid rgb(149, 173, 255);
+    background-color: #3f3f3f;
+}
+.switch #first:checked ~ .imgBox .first, 
+.switch #second:checked ~ .imgBox .second,
+.switch #third:checked ~ .imgBox .third,
+.switch #fourth:checked ~ .imgBox .fourth {
+    opacity: 1;
+    width: auto;
+}
+.switch {
+    max-width: 60vw;
+    min-height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 6%;
+    overflow: hidden;
+}
+.switch #first:checked ~ .bottom .first,
+.switch #second:checked ~ .bottom .second,
+.switch #third:checked ~ .bottom .third,
+.switch #fourth:checked ~ .bottom .fourth  {
+    opacity: 1;
+}
+
+.bottom .second, .bottom .third, .bottom .fourth {
+    margin-left: -100%;
+}
+
+
+.imgBox .first,
+.imgBox .second, 
+.imgBox .third, 
+.imgBox .fourth {
+    opacity: 0;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-height: 20%;
+}
+@media (max-width:550px) {
+    .bottom {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        row-gap: 20%;
+        max-height: 30%;
+        height: 50%;
+    }
+    .textBox {
+        width: 100%;
+        height: 50%;
+    }
+    .controls {
+        width: 100%;
+        height: 20%;
+    }
+    .switch {
+        min-height: 60vh;
+        min-width: 80vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 6%;
+        overflow: hidden;
+    }
+    .controls label {
+        width: 10%;
+    }
+    .switch {
+        justify-content: flex-start;
+        gap: 10%;
+    }
+}
