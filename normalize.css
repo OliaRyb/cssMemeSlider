@@ -71,8 +71,8 @@ body {
     align-items: center;
     justify-content: center;
     padding: 1.5%;
-    width: 30%;
-    aspect-ratio: 1 / 1;
+    width: 1.25rem;
+    height: 1.25rem;
     cursor: pointer; 
 }
 .switch #first:checked ~ .bottom #f, 
