@@ -24,7 +24,7 @@ body {
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
     border-radius: 15px;
     object-fit: cover;
-    transition: 1s;
+    transition: 2s;
 }
 .textBox {
     display: flex;
@@ -42,7 +42,7 @@ body {
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
-    transition: 1s;
+    transition: 2s;
 }
 .switch input {
     display: none;
@@ -61,11 +61,12 @@ body {
     width: 60%;
     height: 60%;
     cursor: pointer;
-    transition: 0.5s;
+    transition: 1s;
 }
 .controls .clickArea:hover,
 label:hover .clickArea {
     background-color: white;
+    border: 2px solid white !important;
 }
 .controls label {
     display: flex;
@@ -77,6 +78,8 @@ label:hover .clickArea {
     aspect-ratio: 1 / 1;
     cursor: pointer; 
 }
+
+
 .switch #first:checked ~ .bottom #f, 
 .switch #second:checked ~ .bottom #s,
 .switch #third:checked ~ .bottom #t,
