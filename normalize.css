@@ -18,7 +18,8 @@ body {
     max-height: 90%;
 }
 .img {
-    width: 100%;
+    width: 0;
+    max-width: 100%;
     max-height: 100%;
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
     border-radius: 15px;
@@ -62,7 +63,8 @@ body {
     cursor: pointer;
     transition: 0.5s;
 }
-.controls .clickArea:hover {
+.controls .clickArea:hover,
+label:hover .clickArea {
     background-color: white;
 }
 .controls label {
@@ -71,8 +73,8 @@ body {
     align-items: center;
     justify-content: center;
     padding: 1.5%;
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 1rem;
+    aspect-ratio: 1 / 1;
     cursor: pointer; 
 }
 .switch #first:checked ~ .bottom #f, 
@@ -82,38 +84,26 @@ body {
     border: 2px solid rgb(149, 173, 255);
     background-color: #3f3f3f;
 }
-.switch #first:checked ~ .imgBox .first {
-    opacity: 1;
-    margin-left: 0;
-} 
-.switch #second:checked ~ .imgBox .second {
-    opacity: 1;
-}
-.switch #third:checked ~ .imgBox .third {
-    opacity: 1;
-}
+.switch #first:checked ~ .imgBox .first, 
+.switch #second:checked ~ .imgBox .second,
+.switch #third:checked ~ .imgBox .third,
 .switch #fourth:checked ~ .imgBox .fourth {
     opacity: 1;
+    width: auto;
 }
 .switch {
-    height: 60vh;
-    width: 40vw;
+    max-height: 60vh;
+    max-width: 40vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin: 6%;
     overflow: hidden;
 }
-.switch #first:checked ~ .bottom .first{
-    opacity: 1;
-} 
-.switch #second:checked ~ .bottom .second {
-    opacity: 1;
-}
-.switch #third:checked ~ .bottom .third {
-    opacity: 1;
-}
-.switch #fourth:checked ~ .bottom .fourth {
+.switch #first:checked ~ .bottom .first,
+.switch #second:checked ~ .bottom .second,
+.switch #third:checked ~ .bottom .third,
+.switch #fourth:checked ~ .bottom .fourth  {
     opacity: 1;
 }
 
@@ -122,12 +112,11 @@ body {
 }
 
 
-.imgBox .first {
+.imgBox .first,
+.imgBox .second, 
+.imgBox .third, 
+.imgBox .fourth {
     opacity: 0;
-}
-.imgBox .second, .imgBox .third, .imgBox .fourth {
-    opacity: 0;
-    margin-left: -100%;
 }
 
 .bottom {
@@ -144,7 +133,8 @@ body {
         justify-content: center;
         align-items: center;
         row-gap: 20%;
-        height: 40%;
+        max-height: 30%;
+        height: 50%;
     }
     .textBox {
         width: 100%;
@@ -155,8 +145,8 @@ body {
         height: 20%;
     }
     .switch {
-        height: 60vh;
-        width: 80vw;
+        min-height: 60vh;
+        min-width: 80vw;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -165,5 +155,9 @@ body {
     }
     .controls label {
         width: 10%;
+    }
+    .switch {
+        justify-content: flex-start;
+        gap: 10%;
     }
 }
