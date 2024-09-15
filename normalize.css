@@ -1,23 +1,47 @@
-
+body {
+    background-color: #3f3f3f;
+}
 .container {
     display: flex;
     flex-direction: column;
-    background-color: #000000;
     overflow: hidden;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+.imgBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    max-height: 90%;
 }
 .img {
-    max-width: 100%;
+    width: 100%;
+    max-height: 100%;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    object-fit: cover;
+    transition: 1s;
+}
+.textBox {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 65%;
 }
 .text {
+    opacity: 0;
     color: white;
-    font-size: 1.5em;
+    font-size: 0.8em;
     font-family: Georgia, 'Times New Roman', Times, serif;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    height: 7vh;
+    flex-wrap: wrap;
     width: 100%;
+    transition: 1s;
 }
 .switch input {
     display: none;
@@ -25,66 +49,121 @@
 .controls {
     display: flex;
     flex-direction: row;
-    gap: 10px;
-    justify-content: flex-end;
-    margin-top: -8%;
-    margin-right: 16%;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+}
+.clickArea {
+    background-color: rgb(149, 173, 255);
+    border-radius: 10px;
+    width: 60%;
+    height: 60%;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.controls .clickArea:hover {
+    background-color: white;
 }
 .controls label {
-    background-color: white;
-    border-radius: 10px;
-    width: 20px;
-    height: 20px;
-    margin: 5px;
-    cursor: pointer;
-    opacity: 50%;
-    transition: 0.5s;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5%;
+    width: 30%;
+    aspect-ratio: 1 / 1;
+    cursor: pointer; 
 }
-.switch #first:checked ~ .controls #f, 
-.switch #second:checked ~ .controls #s,
-.switch #third:checked ~ .controls #t,
-.switch #fourth:checked ~ .controls #fth {
+.switch #first:checked ~ .bottom #f, 
+.switch #second:checked ~ .bottom #s,
+.switch #third:checked ~ .bottom #t,
+.switch #fourth:checked ~ .bottom #fth{
+    border: 2px solid rgb(149, 173, 255);
+    background-color: #3f3f3f;
+}
+.switch #first:checked ~ .imgBox .first {
     opacity: 1;
-    width: 50px;
-}
-.switch #first:checked ~ .wraper {
     margin-left: 0;
 } 
-.switch #second:checked ~ .wraper {
-    margin-left: -100vw;
+.switch #second:checked ~ .imgBox .second {
+    opacity: 1;
 }
-.switch #third:checked ~ .wraper {
-    margin-left: -200vw;
+.switch #third:checked ~ .imgBox .third {
+    opacity: 1;
 }
-.switch #fourth:checked ~ .wraper {
-    margin-left: -300vw;
+.switch #fourth:checked ~ .imgBox .fourth {
+    opacity: 1;
 }
 .switch {
-    height: 100vh;
-}
-.wraper {
-    display: flex;
-    transition: 0.5s;
-    width: 400vw;
-}
-.wraper .box {
+    height: 60vh;
+    width: 40vw;
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    justify-content: space-between;
+    margin: 6%;
+    overflow: hidden;
+}
+.switch #first:checked ~ .bottom .first{
+    opacity: 1;
+} 
+.switch #second:checked ~ .bottom .second {
+    opacity: 1;
+}
+.switch #third:checked ~ .bottom .third {
+    opacity: 1;
+}
+.switch #fourth:checked ~ .bottom .fourth {
+    opacity: 1;
+}
+
+.bottom .second, .bottom .third, .bottom .fourth {
+    margin-left: -100%;
+}
+
+
+.imgBox .first {
+    opacity: 0;
+}
+.imgBox .second, .imgBox .third, .imgBox .fourth {
+    opacity: 0;
+    margin-left: -100%;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 1%;
-    padding: 0 3%;
+    width: 100%;
+    max-height: 20%;
 }
-/* .wraper .theFirst {
-    background-color: red;
+@media (max-width:550px) {
+    .bottom {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        row-gap: 20%;
+        height: 40%;
+    }
+    .textBox {
+        width: 100%;
+        height: 50%;
+    }
+    .controls {
+        width: 100%;
+        height: 20%;
+    }
+    .switch {
+        height: 60vh;
+        width: 80vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 6%;
+        overflow: hidden;
+    }
+    .controls label {
+        width: 10%;
+    }
 }
-.wraper .theSecond {
-    background-color: blue;
-}
-.wraper .theThird {
-    background-color: aquamarine;
-}
-.wraper .theFourth {
-    background-color: pink;
-}  */
