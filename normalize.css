@@ -66,7 +66,6 @@ body {
 .controls .clickArea:hover,
 label:hover .clickArea {
     background-color: white;
-    border: 2px solid white !important;
 }
 .controls label {
     display: flex;
@@ -78,7 +77,12 @@ label:hover .clickArea {
     aspect-ratio: 1 / 1;
     cursor: pointer; 
 }
-
+.switch #first:checked ~ .bottom label:hover #f, 
+.switch #second:checked ~ .bottom label:hover #s,
+.switch #third:checked ~ .bottom label:hover #t,
+.switch #fourth:checked ~ .bottom label:hover #fth {
+    border: 2px solid white !important;
+}
 
 .switch #first:checked ~ .bottom #f, 
 .switch #second:checked ~ .bottom #s,
